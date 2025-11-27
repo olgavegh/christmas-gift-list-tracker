@@ -4,7 +4,7 @@ A simple full-stack app to manage Christmas gifts using React and Express.
 
 ## Preview
 
-![App Preview](./public/preview.png)
+![App Preview](./public/assets/preview.png)
 
 ## Features
 
