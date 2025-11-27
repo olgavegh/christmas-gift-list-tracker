@@ -1,10 +1,10 @@
-import express from "express";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import express from "express";
+import fs from "fs";
+import path from "path";
 
 const pathData = join(dirname(fileURLToPath(import.meta.url)), "", "data.json");
-const fs = require("fs");
-const path = require("path");
 
 const app = express();
 app.use(express.json());
@@ -71,8 +71,6 @@ app.delete("/api/gifts/:id", (req, res) => {
     res.status(404).json({ error: "Gift not found" });
   }
 });
-
-
 
 app.get("/", (req, res) => {
   res.send("User API is running");
