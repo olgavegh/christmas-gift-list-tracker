@@ -9,6 +9,7 @@ import { SpaRounded } from '@mui/icons-material';
 
 export default function App() {
   const [gifts, setGifts] = useState([])
+  const [newGift, setNewGift] = useState({ from: "", to: "", gift: "" })
   const [checked, setChecked] = useState([]);
 
   useEffect(() => {
@@ -34,12 +35,50 @@ export default function App() {
     setGifts(prev => prev.filter(x => x.id !== id))
   }
 
+  const handleAdd = () => {
+    if (newGift.from && newGift.to && newGift.gift) {
+      fetch("/api/gifts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newGift)
+      }).then(res => res.json())
+        .then(added => setGifts(prev => [...prev, added]))
+        .catch(err => console.error("Cant do it.. : " + err.message))
+
+      // reset
+      setNewGift({ from: "", to: "", gift: "" })
+    }
+  }
+
   return (
     <Container maxWidth="sm" sx={{ mt: 8 }}>
       <Paper elevation={3} sx={{ p: 3, borderWidth: 3 }} >
         <Typography variant="h4" align="center" gutterBottom sx={{}}>
           Christmas Gifts
         </Typography>
+        <Box display="flex" gap={2} mb={2}>
+          <TextField
+            size="small"
+            fullWidth
+            label="From"
+            value={newGift.from}
+            onChange={(e) => setNewGift({ ...newGift, from: e.target.value })} />
+          <TextField
+            size="small"
+            fullWidth
+            label="To"
+            value={newGift.to}
+            onChange={(e) => setNewGift({ ...newGift, to: e.target.value })} />
+          <TextField
+            size="small"
+            fullWidth
+            label="Gift"
+            value={newGift.gift}
+            onChange={(e) => setNewGift({ ...newGift, gift: e.target.value })} />
+          <IconButton color="primary" onClick={handleAdd} sx={{ alignSelf: 'center' }}>
+            <AddIcon />
+          </IconButton>
+        </Box>
         <List>
           {gifts.map(gift => (
             <ListItem
