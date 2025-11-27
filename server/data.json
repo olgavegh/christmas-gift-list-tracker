@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "from": "Alice",
+    "to": "Bob",
+    "gift": "Wireless Headphones"
+  },
+  {
+    "id": 2,
+    "from": "Bob",
+    "to": "Charlie",
+    "gift": "LEGO Set"
+  },
+  {
+    "id": 3,
+    "from": "Charlie",
+    "to": "Alice",
+    "gift": "Cookbook"
+  },
+  {
+    "id": 4,
+    "from": "Diana",
+    "to": "Eve",
+    "gift": "Wool Scarf"
+  },
+  {
+    "id": 5,
+    "from": "Eve",
+    "to": "Diana",
+    "gift": "Coffee Mug"
+  }
+]
