@@ -72,8 +72,16 @@ app.delete("/api/gifts/:id", (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("User API is running");
+
+// Serve React build (dist) from Express
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const clientBuildPath = path.join(__dirname, '../dist');
+
+app.use(express.static(clientBuildPath));
+
+// Catch-all route to serve index.html for React Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(clientBuildPath, 'index.html'));
 });
 
 // Start the server
