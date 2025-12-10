@@ -52,11 +52,11 @@ export default function App() {
 
   return (
     <Container maxWidth="sm" sx={{ mt: 8 }}>
-      <Paper elevation={3} sx={{ p: 3, borderWidth: 3 }} >
-        <Typography variant="h4" align="center" gutterBottom sx={{}}>
+      <Paper elevation={3} sx={{ p: 4, borderWidth: 3 }} >
+        <Typography variant="h3" align="center" gutterBottom sx={{ fontFamily: 'Berkshire Swash, sans-serif', fontWeight: '700', marginBottom: 4 }}>
           Christmas Gifts
         </Typography>
-        <Box display="flex" gap={2} mb={2}>
+        <Box display="flex" gap={2} mb={4}>
           <TextField
             size="small"
             fullWidth
@@ -107,6 +107,6 @@ export default function App() {
         </Typography>
 
       </Paper>
-    </Container>
+    </Container >
   );
 }
