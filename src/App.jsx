@@ -75,7 +75,10 @@ export default function App() {
             label="Gift"
             value={newGift.gift}
             onChange={(e) => setNewGift({ ...newGift, gift: e.target.value })} />
-          <IconButton color="primary" onClick={handleAdd} sx={{ alignSelf: 'center' }}>
+          <IconButton
+            color="secondary"
+            onClick={handleAdd}
+          >
             <AddIcon />
           </IconButton>
         </Box>
