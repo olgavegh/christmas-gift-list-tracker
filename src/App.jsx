@@ -5,12 +5,13 @@ import React, { useEffect, useState } from 'react';
 import { Container, Typography, TextField, IconButton, List, ListItem, ListItemText, Checkbox, Box, Paper } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { SpaRounded } from '@mui/icons-material';
+import { motion } from "motion/react"
 
 export default function App() {
   const [gifts, setGifts] = useState([])
   const [newGift, setNewGift] = useState({ from: "", to: "", gift: "" })
   const [checked, setChecked] = useState([]);
+  const [swing, setSwing] = useState(false);
 
   useEffect(() => {
     fetch("/api/gifts")
@@ -23,11 +24,19 @@ export default function App() {
   }, [])
 
   const handleToggle = (id) => {
-    setChecked(prev =>
-      checked.includes(id) ?
-        prev.filter(x => x !== id) :
-        [...prev, id])
+    const isChecked = checked.includes(id)
+    setChecked(prev => {
+      if (!isChecked) {
+        setSwing(true);
+        setTimeout(() => setSwing(false), 700);
+        return [...prev, id];
+      } else {
+        return prev.filter(x => x !== id);
+      }
+    });
   }
+
+
   const handleDelete = (id) => {
     fetch(`/api/gifts/${id}`, { method: "DELETE" })
       .catch(err => console.error("OhOh: " + err.message))
@@ -51,11 +60,18 @@ export default function App() {
   }
 
   return (
-    <Container maxWidth="sm" sx={{ mt: 8 }}>
-      <Paper elevation={3} sx={{ p: 4, borderWidth: 3 }} >
-        <Typography variant="h3" align="center" gutterBottom sx={{ fontFamily: 'Berkshire Swash, sans-serif', fontWeight: '700', marginBottom: 4 }}>
-          Christmas Gifts
-        </Typography>
+    <Container maxWidth="sm" sx={{ mt: 8, position: 'relative' }}>
+      <Paper elevation={3} sx={{
+        p: 4, borderWidth: 3, position: 'relative'
+      }} >
+        <motion.div
+          animate={swing ? { rotate: [0, -8, 7, -6, 5, -4, 3, -2, 1, 0] } : { rotate: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
+          <Typography variant="h3" align="center" gutterBottom sx={{ fontFamily: 'Berkshire Swash, sans-serif', fontWeight: '700', marginBottom: 4, position: 'relative', zIndex: 1 }}>
+            Christmas Gifts
+          </Typography>
+        </motion.div>
         <Box display="flex" gap={2} mb={4}>
           <TextField
             size="small"
@@ -84,25 +100,33 @@ export default function App() {
         </Box>
         <List>
           {gifts.map(gift => (
-            <ListItem
+            <motion.li
               key={gift.id}
-              sx={{ mb: 1, border: '1px solid #eee', borderRadius: 2 }}
-              secondaryAction={
-                <IconButton edge="end" aria-label="delete" onClick={() => handleDelete(gift.id)}>
-                  <DeleteIcon />
-                </IconButton>
-              }>
-              <Checkbox
-                onChange={() => handleToggle(gift.id)}
-              />
-              <ListItemText
-                primary={
-                  <span style={{ textDecoration: checked.includes(gift.id) ? 'line-through' : 'none' }}>
-                    {gift.from} → {gift.to}: {gift.gift}
-                  </span>
-                } />
-
-            </ListItem>
+              style={{ listStyle: 'none' }}
+              initial={false}
+              whileHover={{ scale: 1.02, boxShadow: '0 2px 12px 0 rgba(0,0,0,0.10)' }}
+              transition={{ type: 'spring', stiffness: 180, damping: 22 }}
+            >
+              <ListItem
+                sx={{ mb: 1, border: '1px solid #eee', borderRadius: 2, p: 0.5 }}
+                secondaryAction={
+                  <IconButton edge="end" aria-label="delete" onClick={() => handleDelete(gift.id)}>
+                    <DeleteIcon />
+                  </IconButton>
+                }
+              >
+                <Checkbox
+                  onChange={() => handleToggle(gift.id)}
+                />
+                <ListItemText
+                  primary={
+                    <span style={{ textDecoration: checked.includes(gift.id) ? 'line-through' : 'none' }}>
+                      {gift.from} → {gift.to}: {gift.gift}
+                    </span>
+                  }
+                />
+              </ListItem>
+            </motion.li>
           ))}
         </List>
         <Typography variant="body2" mt={2}>

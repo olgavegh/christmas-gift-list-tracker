@@ -14,9 +14,18 @@ A simple full-stack app to manage Christmas gifts using React and Express.
 
 ## Tech Stack
 
-- React (with Vite)
-- Material UI
-- Express (Node.js)
+<div align="center">
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material UI" width="40" height="40"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" width="40" height="40"/>
+   <img src="https://raw.githubusercontent.com/framer/logos/main/framer-motion/icon.svg" alt="Framer Motion" width="40" height="40"/>
+</div>
+
+- **React (Vite)**
+- **Material UI**
+- **Express (Node.js)**
+- **Framer Motion** (for interactive animations)
 
 ## Getting Started
 
