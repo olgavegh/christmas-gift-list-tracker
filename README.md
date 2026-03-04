@@ -1,12 +1,7 @@
 # Favorite Data Editor
 
-![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-20-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-4-000000?style=flat-square&logo=express&logoColor=white)
-![Material UI](https://img.shields.io/badge/Material%20UI-7-007FFF?style=flat-square&logo=mui&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+[![React][React-badge]][React-url] [![Vite][Vite-badge]][Vite-url] [![JavaScript][JS-badge]][JS-url] [![Node][Node-badge]][Node-url] [![Express][Express-badge]][Express-url] [![Material UI][MaterialUI-badge]][MaterialUI-url] [![CSS3][CSS3-badge]][CSS3-url]
+
 
 A simple full-stack app to manage Christmas gifts using React and Express.
 
@@ -62,3 +57,21 @@ I’d like to make this project even better in the future! Some ideas include:
 - Saving your data securely online so you can access it from anywhere
 - Improving the look and feel with more design options
 - Making sure everything works smoothly and reliably
+
+<!-- BADGES & URLS -->
+
+[React-badge]: https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black
+[React-url]: https://react.dev/
+[Vite-badge]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[Vite-url]: https://vite.dev/
+[JS-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[JS-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[Node-badge]: https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org/
+[Express-badge]: https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white
+[Express-url]: https://expressjs.com/
+[MaterialUI-badge]: https://img.shields.io/badge/Material_UI-007FFF?style=for-the-badge&logo=mui&logoColor=white
+[MaterialUI-url]: https://mui.com/
+[CSS3-badge]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[CSS3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+
