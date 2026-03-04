@@ -1,5 +1,13 @@
 # Favorite Data Editor
 
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-20-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-4-000000?style=flat-square&logo=express&logoColor=white)
+![Material UI](https://img.shields.io/badge/Material%20UI-7-007FFF?style=flat-square&logo=mui&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
 A simple full-stack app to manage Christmas gifts using React and Express.
 
 ## Preview
@@ -14,18 +22,17 @@ A simple full-stack app to manage Christmas gifts using React and Express.
 
 ## Tech Stack
 
-<div align="center">
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40"/>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material UI" width="40" height="40"/>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" width="40" height="40"/>
-   <img src="https://raw.githubusercontent.com/framer/logos/main/framer-motion/icon.svg" alt="Framer Motion" width="40" height="40"/>
-</div>
+**Frontend:**
 
-- **React (Vite)**
-- **Material UI**
-- **Express (Node.js)**
-- **Framer Motion** (for interactive animations)
+- React 19 with Vite
+- Material UI (MUI)
+- Framer Motion (for interactive animations)
+- CSS3 & Emotion
+
+**Backend:**
+
+- Node.js with Express
+- JSON file-based data storage
 
 ## Getting Started
 
